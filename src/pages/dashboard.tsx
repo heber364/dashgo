@@ -69,7 +69,7 @@ export default function Dashboard(){
             <Header />
 
             <Flex width="100%" my="6" maxW={1480} mx="auto" px="6">
-                <Sidebar />
+                <Sidebar/>
                 <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start" pb="4">
                     <Box p="8" bg="gray.800" borderRadius={8}>
                         <Text>Inscritos da semana</Text>
