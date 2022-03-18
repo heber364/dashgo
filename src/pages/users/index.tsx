@@ -14,6 +14,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
@@ -36,15 +37,17 @@ export default function UserList() {
             <Heading size="lg" fontWeight="normal">
               Usuários
             </Heading>
-            <Button
-              as="a"
-              size="sm"
-              fontSize="small"
-              colorScheme="pink"
-              leftIcon={<Icon as={RiAddLine} fontSize="20" />}
-            >
-              Criar novo
-            </Button>
+            <Link href="/users/create" passHref>
+              <Button
+                as="a"
+                size="sm"
+                fontSize="small"
+                colorScheme="pink"
+                leftIcon={<Icon as={RiAddLine} fontSize="20" />}
+              >
+                Criar novo
+              </Button>
+            </Link>
           </Flex>
 
           <Table colorScheme="whiteAlpha">
@@ -54,10 +57,8 @@ export default function UserList() {
                   <Checkbox colorScheme="pink" />
                 </Th>
                 <Th>Usuário</Th>
-                {isWideVersion && <Th>Data de Cadastro</Th> } 
+                {isWideVersion && <Th>Data de Cadastro</Th>}
                 {isWideVersion && <Th w="8"></Th>}
-
-                
               </Tr>
             </Thead>
             <Tbody>
@@ -74,7 +75,7 @@ export default function UserList() {
                   </Box>
                 </Td>
                 {isWideVersion && <Td>08 de março de 2022</Td>}
-                {isWideVersion && 
+                {isWideVersion && (
                   <Td>
                     <Button
                       as="a"
@@ -86,7 +87,61 @@ export default function UserList() {
                       Editar
                     </Button>
                   </Td>
-                }
+                )}
+              </Tr>
+              <Tr>
+                <Td px={["4", "4", "6"]}>
+                  <Checkbox colorScheme="pink" />
+                </Td>
+                <Td>
+                  <Box>
+                    <Text fontWeight="bold">Héber Silva</Text>
+                    <Text fontSize="small" color="gray.300">
+                      heberlimasilva@gmail.com
+                    </Text>
+                  </Box>
+                </Td>
+                {isWideVersion && <Td>08 de março de 2022</Td>}
+                {isWideVersion && (
+                  <Td>
+                    <Button
+                      as="a"
+                      size="sm"
+                      fontSize="small"
+                      colorScheme="purple"
+                      leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
+                    >
+                      Editar
+                    </Button>
+                  </Td>
+                )}
+              </Tr>
+              <Tr>
+                <Td px={["4", "4", "6"]}>
+                  <Checkbox colorScheme="pink" />
+                </Td>
+                <Td>
+                  <Box>
+                    <Text fontWeight="bold">Héber Silva</Text>
+                    <Text fontSize="small" color="gray.300">
+                      heberlimasilva@gmail.com
+                    </Text>
+                  </Box>
+                </Td>
+                {isWideVersion && <Td>08 de março de 2022</Td>}
+                {isWideVersion && (
+                  <Td>
+                    <Button
+                      as="a"
+                      size="sm"
+                      fontSize="small"
+                      colorScheme="purple"
+                      leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
+                    >
+                      Editar
+                    </Button>
+                  </Td>
+                )}
               </Tr>
             </Tbody>
           </Table>
