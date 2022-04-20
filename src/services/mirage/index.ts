@@ -53,7 +53,7 @@ export function makeServer(){
                 )
                 
             });
-
+            this.get('/users/:id')
             this.post('/users');
 
             this.namespace = '';
